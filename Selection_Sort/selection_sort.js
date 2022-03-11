@@ -15,11 +15,13 @@ function selection_sort(arr) {
       }
     }
 
-    //swap lowest value with the starting point
-    [arr[start_point], arr[lowest_value_index]] = [
-      arr[lowest_value_index],
-      arr[start_point],
-    ];
+    //swap lowest value with the starting point, not if lowest value is starting point
+    if (lowest_value_index != start_point) {
+      [arr[start_point], arr[lowest_value_index]] = [
+        arr[lowest_value_index],
+        arr[start_point],
+      ];
+    }
 
     start_point++;
     lowest_value_index = start_point;
